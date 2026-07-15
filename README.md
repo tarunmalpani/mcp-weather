@@ -51,10 +51,39 @@ Add the same `mcpServers` block to your `claude_desktop_config.json` (Settings â
 
 After saving the config, restart the client. The `get_weather` tool will be available automatically.
 
+## Remote / Hosted Usage
+
+This repo also includes `remote-server.ts`, which exposes the same `get_weather` tool over Streamable HTTP instead of stdio. Deploy it to any Node hosting platform (e.g. [Render](https://render.com)) and clients can connect via URL â€” no local clone or install needed on the client side.
+
+**Deploying (e.g. on Render):**
+- Build Command: `npm install`
+- Start Command: `npm run start:remote`
+- No environment variables required (the host's `PORT` is picked up automatically)
+
+**Client config, once deployed:**
+
+```json
+{
+  "mcpServers": {
+    "weather": {
+      "url": "https://your-deployed-url.example.com/mcp"
+    }
+  }
+}
+```
+
+Note: free hosting tiers typically spin down after a period of inactivity, so the first request after idling may take 10-30 seconds while the instance wakes up.
+
 ## Development
 
 Run the server directly (useful for testing it starts without errors):
 
 ```bash
 npm start
+```
+
+To run the remote/HTTP variant locally:
+
+```bash
+npm run start:remote
 ```
