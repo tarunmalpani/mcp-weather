@@ -1,4 +1,4 @@
-# Weather MCP Server
+# Weather MCP Server1
 
 A simple [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server that exposes a `get_weather` tool. It fetches real-time weather for any GPS coordinates using the free [Open-Meteo](https://open-meteo.com) API — no API key required.
 
