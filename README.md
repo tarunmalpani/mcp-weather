@@ -66,11 +66,13 @@ This repo also includes `remote-server.ts`, which exposes the same `get_weather`
 {
   "mcpServers": {
     "weather": {
-      "url": "https://your-deployed-url.example.com/mcp"
+      "url": "https://mcp-weather-1cyg.onrender.com/mcp"
     }
   }
 }
 ```
+
+This is a live, hosted instance — you can use the URL above directly without deploying your own.
 
 Note: free hosting tiers typically spin down after a period of inactivity, so the first request after idling may take 10-30 seconds while the instance wakes up.
 
