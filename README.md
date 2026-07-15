@@ -1,6 +1,11 @@
-# Weather MCP Server1
+# Weather MCP Server
 
 A simple [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server that exposes a `get_weather` tool. It fetches real-time weather for any GPS coordinates using the free [Open-Meteo](https://open-meteo.com) API — no API key required.
+
+## Requirements
+
+- Node.js **18 or later**. If you use `nvm` and have multiple Node versions installed, make sure a compatible version resolves first in your `PATH`, or point your MCP client config at a specific Node binary (see Usage below).
+- No API key or environment variables required.
 
 ## Tool
 
