@@ -60,19 +60,22 @@ This repo also includes `remote-server.ts`, which exposes the same `get_weather`
 - Start Command: `npm run start:remote`
 - No environment variables required (the host's `PORT` is picked up automatically)
 
-**Client config, once deployed:**
+A live, hosted instance is running at `https://mcp-weather-1cyg.onrender.com/mcp` — you can connect to it directly without deploying your own.
 
-```json
-{
-  "mcpServers": {
-    "weather": {
-      "url": "https://mcp-weather-1cyg.onrender.com/mcp"
+**Connecting a client to the remote URL:**
+
+- **Claude Code**: add to `.mcp.json`:
+  ```json
+  {
+    "mcpServers": {
+      "weather": {
+        "type": "http",
+        "url": "https://mcp-weather-1cyg.onrender.com/mcp"
+      }
     }
   }
-}
-```
-
-This is a live, hosted instance — you can use the URL above directly without deploying your own.
+  ```
+- **Claude Desktop**: Desktop does not support a plain `url` field in `claude_desktop_config.json` for remote servers. Instead, go to **Settings → Connectors → Add Custom Connector** and paste the URL there.
 
 Note: free hosting tiers typically spin down after a period of inactivity, so the first request after idling may take 10-30 seconds while the instance wakes up.
 
